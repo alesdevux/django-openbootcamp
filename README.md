@@ -46,3 +46,24 @@ Dins del paquet del projecte hi ha els següents fitxers:
 
 ### Settings
 
+---
+### Crear aplicació
+
+```
+python manage.py startapp polls
+```
+
+I afegir-la a `INSTALLED_APPS` a `settings.py` de la carpeta del projecte.
+
+```python
+INSTALLED_APPS = [
+    ...
+    'polls',
+]
+```
+
+Per comprovat que tot està correcte:
+
+```
+python manage.py check polls
+```
