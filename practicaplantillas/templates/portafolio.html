@@ -1,9 +1,18 @@
 {% extends './layouts/base.html' %}
-<!-- {% load static %} -->
+{% load static %}
 {% block title %}Portafolio{% endblock %}
-<!-- {% block styles %}
-  <link rel="stylesheet" href="{% static 'styles/about-me.css' %}">
-{% endblock styles %} -->
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'styles/portafolio.css' %}">
+{% endblock styles %}
 {% block content %}
   <h1>Portafolio</h1>
+  <section class="portafolio">
+    <img src="{% static 'images/portafolio/bao-menglong-EnJbdNADiTI-unsplash.jpg' %}" alt="">
+    <img src="{% static 'images/portafolio/erwan-hesry-LO4jovFwX1A-unsplash.jpg' %}" alt="">
+    <img src="{% static 'images/portafolio/fumiaki-hayashi-0olOYRPgIkE-unsplash.jpg' %}" alt="">
+    <img src="{% static 'images/portafolio/juniperphoton-xZzhJwNMMvM-unsplash.jpg' %}" alt="">
+    <img src="{% static 'images/portafolio/lorin-both-_GEvFxWyC7o-unsplash.jpg' %}" alt="">
+    <img src="{% static 'images/portafolio/murewa-saibu-mpe5eYvL3pQ-unsplash.jpg' %}" alt="">
+    <img src="{% static 'images/portafolio/tobias-reich-ds8GBtSUtLU-unsplash.jpg' %}" alt="">
+  </section>
 {% endblock %}
