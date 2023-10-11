@@ -16,11 +16,12 @@
   <ul>
     {% for category in categories %}
       {% if category == 'JavaScript' %}
-        <li><strong>{{ category }}</strong></li>
+        <li><strong>{{ category|upper }}</strong></li>
       {% else %}
         <li>{{ category }}</li>
       {% endif %}
     {% endfor %}
   </ul>
+  <h4>Total de categorias: {{ categories|length }}</h4>
 </body>
 </html>
