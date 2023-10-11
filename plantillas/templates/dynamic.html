@@ -7,7 +7,12 @@
 </head>
 <body>
   <h1>Hola {{ name }}</h1>
+  <!-- Comentario que se imprime en el HTML -->
   <h3>Categorias</h3>
+  {# Comentario que no se imprime en el HTML #}
+  {% comment %}
+    Comentario que no se imprime en el HTML
+  {% endcomment %}
   <ul>
     {% for category in categories %}
       {% if category == 'JavaScript' %}
