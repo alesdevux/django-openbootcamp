@@ -5,7 +5,10 @@
   <link rel="stylesheet" href="{% static 'styles/portafolio.css' %}">
 {% endblock styles %}
 {% block content %}
-  <h1>Portafolio</h1>
+  <section class="title-space">
+    {% include 'partials/profile-img.html' %}
+    <h1>Portafolio</h1>
+  </section>
   <section class="portafolio">
     <article class="portafolio-item">
       <div class="info">
