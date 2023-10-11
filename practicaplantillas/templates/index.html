@@ -1,0 +1,9 @@
+{% extends './layouts/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'about-me.css' %}">
+{% endblock styles %}
+{% block content %}
+  {% include 'partials/about-me.html' %}
+{% endblock %}
