@@ -67,3 +67,20 @@ Per comprovat que tot està correcte:
 ```
 python manage.py check polls
 ```
+
+## Models
+
+Una vegada creem un Model, li hem d'indicar a Django que faci les migracions dels models a format SQL.
+
+```
+python manage.py makemigrations
+```
+
+Acte seguit hem d'aplicar les migracions:
+
+```
+python manage.py migrate
+```
+
+A partir d'aquí, si tornem a fer canvis al model, hem de tornar a fer els dos passos anteriors.
+Els canvis que es fan a les migracions es guarden a la carpeta `migrations` de cada aplicació. A partir de la primera migració `0001_initial.py` es creen fitxers amb els canvis que s'han fet a cada migració.
