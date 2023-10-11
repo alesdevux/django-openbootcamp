@@ -4,3 +4,21 @@
   column-rule: 1px solid #ccc;
   padding: var(--padding-base) 0;
 }
+
+.about-me-image {
+  max-width: 200px;
+  aspect-ratio: 1/1;
+  border-radius: 0 0 50% 50%;
+}
+
+.bg-img {
+  max-width: 200px;
+  aspect-ratio: 1/1;
+  background-color: skyblue;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
