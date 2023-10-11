@@ -6,5 +6,12 @@ def simple(request):
 
 
 def dynamic(request, name):
-    context = {"name": name}
+    categories = [
+        "JavaScript",
+        "Python",
+        "Django",
+        "HTML",
+        "CSS",
+    ]
+    context = {"name": name, "categories": categories}
     return render(request, "dynamic.html", context)

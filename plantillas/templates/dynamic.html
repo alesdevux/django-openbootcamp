@@ -7,5 +7,15 @@
 </head>
 <body>
   <h1>Hola {{ name }}</h1>
+  <h3>Categorias</h3>
+  <ul>
+    {% for category in categories %}
+      {% if category == 'JavaScript' %}
+        <li><strong>{{ category }}</strong></li>
+      {% else %}
+        <li>{{ category }}</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
 </body>
 </html>
