@@ -92,7 +92,7 @@ a::before {
   width: 100%;
   height: 3px;
   background-color: var(--primary);
-  transform-origin: bottom;
+  transform-origin: bottom center;
   transition: all 0.3s ease;
   z-index: -1;
 }
@@ -106,7 +106,6 @@ a:hover::before {
 
 header li a {
   padding: 8px 16px;
-  border-radius: var(--radius);
   border: 1px solid transparent;
 }
 
@@ -143,8 +142,7 @@ h1::before {
   width: 100%;
   height: 100%;
   background-color: var(--secondary);
-  transform-origin: bottom;
-  transition: all 0.3s ease;
+  transform-origin: center;
   z-index: -1;
   rotate: -2deg;
   transform: scale(1.1);
