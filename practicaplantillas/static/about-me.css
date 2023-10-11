@@ -1,0 +1,6 @@
+.about-me-intro {
+  columns: 200px 2;
+  column-gap: 3em;
+  column-rule: 1px solid #ccc;
+  padding: var(--padding-base) 0;
+}
