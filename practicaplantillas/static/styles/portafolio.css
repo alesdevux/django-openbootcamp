@@ -1,6 +1,7 @@
 .portafolio {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-top: var(--padding-base);
 }
 
 .portafolio .portafolio-item {
@@ -12,17 +13,41 @@
   position: absolute;
   bottom: -100%;
   padding: var(--padding-base);
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(51, 51, 51, 0.5);
   color: var(--white);
+  transition: bottom 0.4s ease;
+  z-index: 1;
 }
 
 .portafolio-item:hover .info {
   bottom: 0;
-  transition: bottom 0.4s ease;
 }
 
 .portafolio img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.title-space {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 16px;
+  display: inline-flex;
+  margin: 2px;
+}
+
+.about-me-image {
+  max-width: 75px;
+  aspect-ratio: 1/1;
+  border-radius: 0 0 50% 50%;
+}
+
+.bg-img {
+  max-width: 75px;
+  aspect-ratio: 1/1;
+  background-color: var(--primary);
+  border-radius: 50%;
+  margin: 0 auto;
 }
