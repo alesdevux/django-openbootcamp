@@ -9,7 +9,9 @@
   --white: #fff;
   --grey-light: #ddd;
   --dark: #333;
-  --font-size-base: 14px;
+  --primary: #87ceeb;
+  --secondary: #F0DC6A;
+  --font-size-base: 16px;
   --header-height: 60px;
   --footer-height: 60px;
   --padding-base: 20px;
@@ -35,6 +37,7 @@ header {
   padding: 0 var(--padding-base);
   position: sticky;
   top: 0;
+  z-index: 100;
 }
 
 header .container {
@@ -72,16 +75,43 @@ ul {
   gap: 8px;
 }
 
-header a {
+a {
   color: var(--dark);
   text-decoration: none;
-  display: block;
+}
+
+a {
+  position: relative;
+  z-index: 1;
+}
+
+a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary);
+  transform-origin: bottom;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+a:hover::before {
+  height: 100%;
+  rotate: -2deg;
+  transform: scale(1.1);
+  z-index: -1;
 }
 
 header li a {
   padding: 8px 16px;
   border-radius: var(--radius);
   border: 1px solid transparent;
+}
+
+header li a::before {
+  display: none;
 }
 
 header li a.call,
@@ -101,7 +131,23 @@ header li a:hover {
 
 h1 {
   font-size: 2rem;
-  margin: var(--padding-base) 0;
+  margin: var(--padding-base) auto;
+  position: relative;
+  display: inline-block;
+}
+
+h1::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--secondary);
+  transform-origin: bottom;
+  transition: all 0.3s ease;
+  z-index: -1;
+  rotate: -2deg;
+  transform: scale(1.1);
 }
 
 h4, h5, h6 {
