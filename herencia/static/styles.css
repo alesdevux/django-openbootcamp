@@ -13,6 +13,7 @@
   --header-height: 60px;
   --footer-height: 60px;
   --padding-base: 20px;
+  --radius: 5px;
 }
 
 body {
@@ -59,11 +60,21 @@ ul {
   gap: 10px;
 }
 
-ul li a {
+header a {
   color: var(--dark);
   text-decoration: none;
-  padding: 10px var(--padding-base);
   display: block;
+}
+
+header li a {
+  padding: 8px var(--padding-base);
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+}
+
+header li a:hover {
+  background-color: var(--light);
+  border-color: var(--grey-light);
 }
 
 h4, h5, h6 {
