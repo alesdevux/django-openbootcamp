@@ -33,6 +33,8 @@ header {
   background-color: var(--white);
   border-bottom: 1px solid var(--grey-light);
   padding: 0 var(--padding-base);
+  position: sticky;
+  top: 0;
 }
 
 header .container {
