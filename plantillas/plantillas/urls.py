@@ -22,4 +22,5 @@ from . import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("simple/", views.simple, name="simple"),
+    path("dynamic/<str:name>", views.dynamic, name="dynamic"),
 ]
