@@ -84,3 +84,35 @@ python manage.py migrate
 
 A partir d'aquí, si tornem a fer canvis al model, hem de tornar a fer els dos passos anteriors.
 Els canvis que es fan a les migracions es guarden a la carpeta `migrations` de cada aplicació. A partir de la primera migració `0001_initial.py` es creen fitxers amb els canvis que s'han fet a cada migració.
+
+Si creem un camp que pot ser nul quan ja tenim dades, estem comprometent la integritat de les dades, ja que tindríem camps buits d'un camp que no ho pot ser.
+Django ho detecta, ens avisa i ens indica dues opcions:
+1. Crear un valor per defecte per a les dades que ja tenim.
+2. Tancar la migració i fer els canvis manualment.
+
+## Delegació de URLs
+
+Per poder reutilitzar les rutes quan volguem reutilitzar una app a un altre projecte, hem de fer que les rutes estiguin delegades a la app.
+És a dir, dins del directori de l'app, al seu `urls.py` configurarem les noves rutes, i al arxiu `urls.py` del projecte, inclourem aquestes.
+
+```python
+# urls.py de l'app
+from django.urls import path
+
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='index_app'),
+]
+```
+
+```python
+# urls.py del projecte
+from django.contrib import admin
+from django.urls import include, path
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('name_path/', include('name_app.urls')),
+]
+```
