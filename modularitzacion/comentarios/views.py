@@ -8,11 +8,16 @@ def test(request):
 
 
 def create(request):
-    comment = Comment(
-        name="Flatley",
-        score=5,
+    # comment = Comment(
+    #     name="Flatley",
+    #     score=5,
+    #     text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quibusdam.",
+    # )
+    # comment.save()
+    comment = Comment.objects.create(
+        name="Windler, Hegmann and Armstrong",
+        score=3,
         text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quibusdam.",
     )
-    comment.save()
 
     return HttpResponse("Hola mundo desde create")
