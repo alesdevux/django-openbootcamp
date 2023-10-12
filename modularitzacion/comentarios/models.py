@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Comments(models.Model):
+class Comment(models.Model):
     name = models.CharField(max_length=50, null=False)
     score = models.IntegerField(default=4)
     text = models.TextField(max_length=1000, null=True)
