@@ -116,3 +116,39 @@ urlpatterns = [
     path('name_path/', include('name_app.urls')),
 ]
 ```
+
+## Creació i eliminació de dades
+
+Per crear dades, hem de crear una instància del model i guardar-la a la base de dades.
+
+```python
+# Creació
+from .models import Comment
+
+def create(request):
+    # Opció 1 -> Crear instància i guardar-la amb el mètode save a través del model directament
+    comment = Comment(
+        name="Flatley",
+        score=5,
+        text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quibusdam.",
+    )
+    comment.save()
+    # Opció 2 -> Crear instància i guardar-la amb el mètode create del model a través de l'objecte
+    comment = Comment.objects.create(
+        name="Windler, Hegmann and Armstrong",
+        score=3,
+        text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quibusdam.",
+    )
+
+    return HttpResponse("Hola mundo desde create")
+
+# Eliminació
+def delete(request):
+    # Opció 1 -> Eliminar instància amb el mètode delete a través del model directament
+    comment = Comment.objects.get(id=1)
+    comment.delete()
+    # Opció 2 -> Eliminar instància amb filter i delete a través del model directament
+    Comment.objects.filter(id=2).delete()
+
+    return HttpResponse("Hola mundo desde delete")
+```

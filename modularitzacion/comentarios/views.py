@@ -21,3 +21,11 @@ def create(request):
     )
 
     return HttpResponse("Hola mundo desde create")
+
+
+def delete(request):
+    # comment = Comment.objects.get(id=1)
+    # comment.delete()
+    Comment.objects.filter(id=2).delete()
+
+    return HttpResponse("Hola mundo desde delete")
